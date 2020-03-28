@@ -38,13 +38,22 @@
       SendName();
       something("AdmiralC");
 
-      echo "<h1>Return Function</h1></br>";
-      echo RecCal(15, 642) . "</br>";
+      echo "<h1>Return Function</h1>";
+      echo "</br>" . RecCal(15, 642) . "</br>";
 
       echo $color[0] . "</br>";
 
       define("PI", "3.14");
-      echo PI . "</br>";
+      echo PI . "</br></br>";
+
+      $max = 10;
+
+      for ($i=0; $i < $max; $i++) {
+        for ($j=0; $j < $i; $j++) {
+          echo "*";
+        }
+        echo "<br>";
+      }
 
     ?>
   </body>
