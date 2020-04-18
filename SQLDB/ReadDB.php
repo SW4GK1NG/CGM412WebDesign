@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+
+<?php
+  session_start();
+
+  if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    haeder ("location: login.php");
+    exit;
+  }
+?>
+
 <html>
   <head>
 
@@ -8,6 +18,10 @@
 
   <body>
 
+    <?php
+      echo "<br><br>" . "User: " . $_SESSION['username'] . "   ";
+      echo "[<a href='logout.php'>Logout</a>]<br><br>"
+    ?>
 
     <?php
 
