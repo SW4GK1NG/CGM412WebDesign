@@ -5,15 +5,12 @@
     haeder ("location: login.php");
     exit;
   }
-?>
-
-<?php
 
   require_once 'config.php';
 
-  $stu_id = $_GET["stu_id"];
+  $user_id = $_GET["user_id"];
 
-  $sql = "DELETE FROM students WHERE stu_id='$stu_id'";
+  $sql = "DELETE FROM userdata WHERE UserID='$user_id'";
 
   if (mysqli_query($conn, $sql)) {
     header ("location: ReadDB.php");

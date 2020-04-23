@@ -13,10 +13,10 @@
 
   $stu_id = $_POST["ID"];
   $stu_name = $_POST["Name"];
-  $stu_sur = $_POST["Surname"];
-  $stu_major = $_POST["Major"];
+  $stu_sur = $_POST["FEmote"];
+  $stu_major = $_POST["UseEmote"];
 
-  $sql = "INSERT INTO students(stu_id, stu_name, stu_surname, stu_major) VALUES ('$stu_id','$stu_name','$stu_sur','$stu_major')";
+  $sql = "INSERT INTO userdata(UserID, Username, FavoriteEmote, MostUseEmote) VALUES ('$stu_id','$stu_name','$stu_sur','$stu_major')";
 
   if(mysqli_query($conn, $sql)) {
     echo "New Record Added";

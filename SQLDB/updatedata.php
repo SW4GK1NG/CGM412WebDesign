@@ -13,10 +13,10 @@
 
   $stu_id = $_POST["ID"];
   $stu_name = $_POST["Name"];
-  $stu_sur = $_POST["Surname"];
-  $stu_major = $_POST["Major"];
+  $stu_sur = $_POST["FEmote"];
+  $stu_major = $_POST["UseEmote"];
 
-  $sql = "UPDATE students SET stu_name='$stu_name', stu_surname='$stu_sur', stu_major='$stu_major' WHERE stu_id=$stu_id";
+  $sql = "UPDATE userdata SET Username='$stu_name', FavoriteEmote='$stu_sur', MostUseEmote='$stu_major' WHERE UserID=$stu_id";
 
   if(mysqli_query($conn, $sql)) {
     echo "New Record Added";

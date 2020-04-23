@@ -19,21 +19,21 @@
 
       require_once 'config.php';
 
-      $stuID = $_GET["stu_id"];
-      $sql = "SELECT * FROM students WHERE stu_id=$stuID";
+      $user_id = $_GET["user_id"];
+      $sql = "DELETE FROM userdata WHERE UserID='$user_id'";
 
       $result = mysqli_query($conn, $sql);
       if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
           ?>
 
-          <h2>Add New Student</h2>
+          <h2>Edit Your Data</h2>
           <form action="updatedata.php" method="post">
 
-            ID: <?php echo $stuID;?><br><br><input type="hidden" name="ID" value="<?php echo $stuID;?>">
-            Name: <input type="text" name="Name" value="<?php echo $row['stu_name']?>"><br><br>
-            Surname: <input type="text" name="Surname" value="<?php echo $row['stu_surname']?>"><br><br>
-            Major: <input type="text" name="Major" value="<?php echo $row['stu_major']?>"><br><br>
+            ID: <?php echo $user_ID;?><br><br><input type="hidden" name="ID" value="<?php echo $user_ID;?>">
+            Username: <input type="text" name="Name" value="<?php echo $row['Username']?>"><br><br>
+            Favorite Emote: <input type="text" name="FEmote" value="<?php echo $row['FavoriteEmote']?>"><br><br>
+            Most Used Emote: <input type="text" name="UseEmote" value="<?php echo $row['MostUseEmote']?>"><br><br>
 
             <input type="submit" value="Submit">
           </form>
